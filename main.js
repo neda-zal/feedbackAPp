@@ -36,7 +36,7 @@ let trayMenu = Menu.buildFromTemplate([
 
 function createTray() {
 
-  tray = new Tray('assets/images/index.png');
+  tray = new Tray(path.join(__dirname,'icon.png'));
   tray.setToolTip('LOGINVSI feedback application');
   tray.on('click', e => {
     mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show();
@@ -46,7 +46,7 @@ function createTray() {
 
 function createWindow () {
 
-  createTray();
+  //createTray();
 
   // save the window state
   let winState = windowStateKeeper({
@@ -64,7 +64,7 @@ function createWindow () {
       nodeIntegration: true,
       enableRemoteModule: true
     },
-    icon: __dirname + '/assets/images/index.png',
+    //icon: __dirname + '/assets/images/index.png',
     show: false
   });
 
@@ -90,7 +90,7 @@ function createWindow () {
        }).then(data => {
          setTimeout(() => {
            let num = data.dataValues.id + 1;
-           console.log(num);
+
            screenshot({ filename: 'C:\\Users\\Public\\' + num + '.png' });
 
            setTimeout(() => {
@@ -132,13 +132,12 @@ function createWindow () {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.whenReady().then(() => {
-  createWindow();
-  app.on('activate', function () {
-    // On macOS it's common to re-create a window in the app when the
-    // dock icon is clicked and there are no other windows open.
-    if (BrowserWindow.getAllWindows().length === 0) createWindow();
-  });
+app.on('ready',createWindow);
+
+app.on('activate', function () {
+  // On macOS it's common to re-create a window in the app when the
+  // dock icon is clicked and there are no other windows open.
+  if (BrowserWindow.getAllWindows().length === 0) createWindow();
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common

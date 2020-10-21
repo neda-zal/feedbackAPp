@@ -1,5 +1,5 @@
 {
-  "name": "feedback_desktop_application",
+  "name": "LOGINVSI",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
@@ -13,7 +13,9 @@
   "author": "Neda",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^10.1.3"
+    "electron": "^10.1.3",
+    "electron-builder": "^22.9.1",
+    "nodemon": "^2.0.6"
   },
   "dependencies": {
     "@azure/abort-controller": "^1.0.1",
@@ -28,8 +30,14 @@
     "ip": "^1.1.5",
     "mysql2": "^2.2.5",
     "node-powershell": "^4.0.0",
-    "nodemon": "^2.0.4",
     "screenshot-desktop": "^1.12.2",
     "sequelize": "^6.3.5"
+  },
+  "build": {
+    "copyright": "Neda Zalieskaite",
+    "win": {
+      "target": "zip"
+    },
+    "files": ["**/*", "build/icon.*"]
   }
 }

@@ -1,0 +1,84 @@
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content:flex-end;
+    margin-top: 0px;
+}
+
+.rating>input {
+    display: none;
+}
+
+.rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 5vw;
+    color: #FFD600;
+    cursor: pointer;
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0;
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.rating>input:checked~label:before {
+    opacity: 1
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+
+textarea {
+    padding: 5px 0 0 10px;
+    vertical-align: top;
+    resize: none;
+}
+
+#email>textarea {
+  padding: 0 0 0 10px;
+}
+
+textarea:focus {
+    outline: none !important;
+    border-color: #0d47a1;
+    box-shadow: 0 0 5px #0d47a1;
+}
+
+p {
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+button {
+  margin-top: 5px;
+  width: 120px;
+  height: 35px;
+  background-color: white;
+  border: 1px solid #616161;
+  color: black;
+  font-size: 16px;
+  float: right;
+}
+
+button:hover {
+  color: #0d47a1;
+  background-color: #eeeeee;
+}
+
+button:visited {
+  background-color: white;
+  color: black;
+}
+
+#submit {
+  margin-top: 90px;
+}

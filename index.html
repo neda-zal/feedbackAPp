@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="Content-Security-Policy"
+    content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+    <title>LOGINVSI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/js/bootstrap.min.js"
+    integrity="sha512-r8o3IMbHMsQlcQv/AbejcCasSXqwlwjnstW1Li1MELnRr/d8Fv/vQsOQh4Xu03E3lFpoefqvloTq4ATpHcEzIg==" crossorigin="anonymous"></script>
+    <script src="assets/js/index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+    integrity="sha512-4E4EgnhRoo0IXwAtqk/RIu5UjW7/mdqVOWBxeh2omq9mem2We4+Xhx+oXmpk0OyHNF3c3XZ+5PXuRopNoeVfHQ==" crossorigin="anonymous" />
+    <link rel="icon" href="assets/images/index.png" type="image/gif">
+    <link rel="stylesheet" href="assets/css/index.css">
+  </head>
+  <body class="m-3" style="user-select:none; -webkit-app-region: drag;">
+
+    <div class="container-fluid">
+      <img src="assets/images/loginVSI lab logo.svg" alt="">
+    </div>
+
+    <div class="container-fluid" id="appreciation">
+      <p>
+        How was your computer performance?
+      </p>
+    </div>
+
+    <form action="/" method="post">
+
+      <div class="rating container-fluid">
+        <input type="radio" name="rating" value="Great" id="5">
+        <label for="5">☆</label>
+        <input type="radio" name="rating" value="Good" id="4">
+        <label for="4">☆</label>
+        <input type="radio" name="rating" value="Fair" id="3">
+        <label for="3">☆</label>
+        <input type="radio" name="rating" value="Poor" id="2">
+        <label for="2">☆</label>
+        <input type="radio" name="rating" value="Bad" id="1">
+        <label for="1">☆</label>
+      </div>
+
+      <div class="container-fluid mb-2" id="email">
+        <label class="pt-2 pb-2" for="email">Email address: </label>
+        <br />
+        <textarea class="container-fluid" id="emailad" name="email" rows="1" required></textarea>
+      </div>
+
+      <div class="container-fluid">
+        <label class="pt-3 pb-2" for="email">Please leave a comment: </label>
+        <br />
+        <textarea class="container-fluid" rows="5" name="comment" id="comment" required></textarea>
+      </div>
+
+      <input type="file" id="file-input" multiple style="display: none;" />
+
+      <div class="container-fluid">
+        <button id="submit">SUBMIT</button>
+      </div>
+    </form>
+
+    <script type="text/javascript">
+      require('./renderer.js')
+    </script>
+  </body>
+
+</html>
